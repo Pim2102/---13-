@@ -1,0 +1,1252 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>สรุปบทเรียนภาษาญี่ปุ่น บทที่ 13 (日本とタイ) - Interactive Edition</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Sarabun & Kosugi Maru (Japanese Style) -->
+    <link href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&family=Sarabun:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Sarabun', 'Kosugi Maru', sans-serif;
+        }
+        .jp-font {
+            font-family: 'Kosugi Maru', sans-serif;
+        }
+        /* Smooth transition for tabs */
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.4s ease-in-out forwards;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen">
+
+    <!-- Header Section -->
+    <header class="bg-gradient-to-r from-red-500 via-rose-500 to-pink-600 text-white py-12 px-4 shadow-md text-center relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:16px_16px]"></div>
+        <div class="max-w-4xl mx-auto relative z-10">
+            <span class="bg-white/20 text-white text-xs font-semibold px-4 py-1.5 rounded-full uppercase tracking-wider font-sans">Lesson 13 • 第13課</span>
+            <h1 class="text-4xl md:text-6xl font-extrabold mt-3 mb-3 jp-font">日本とタイ</h1>
+            <p class="text-lg md:text-2xl text-pink-100 font-light font-sans">คลังสรุปความรู้และแบบฝึกหัดภาษาญี่ปุ่น: เปรียบเทียบของ 2 สิ่ง, 3 สิ่ง, ขั้นสุด และขั้นเท่ากัน</p>
+            
+            <!-- Quick Romaji Toggle -->
+            <div class="mt-6 flex justify-center">
+                <button id="toggleRomaji" class="bg-white text-red-600 font-semibold px-6 py-2.5 rounded-full shadow-lg hover:shadow-xl hover:bg-pink-50 transition-all flex items-center gap-2 text-sm">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                    </svg>
+                    <span id="romajiBtnText">ซ่อนคำอ่านโรมาจิ</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Interactive Navigation Tabs (6 Tabs) -->
+    <div class="max-w-5xl mx-auto px-4 mt-8">
+        <nav class="flex flex-wrap justify-center gap-2 bg-slate-200/60 p-2 rounded-2xl md:rounded-full border border-slate-200">
+            <button onclick="switchTab('tab1', this)" class="tab-btn active w-full md:w-auto px-4 py-3 rounded-xl md:rounded-full font-bold text-xs text-slate-700 hover:bg-white/50 transition-all flex items-center justify-center gap-2 bg-white text-red-600 shadow-sm">
+                <span>📖 1. คำคุณศัพท์</span>
+            </button>
+            <button onclick="switchTab('tab2', this)" class="tab-btn w-full md:w-auto px-4 py-3 rounded-xl md:rounded-full font-bold text-xs text-slate-700 hover:bg-white/50 transition-all flex items-center justify-center gap-2">
+                <span>⚖️ 2. เปรียบเทียบ 2 สิ่ง</span>
+            </button>
+            <button onclick="switchTab('tab3', this)" class="tab-btn w-full md:w-auto px-4 py-3 rounded-xl md:rounded-full font-bold text-xs text-slate-700 hover:bg-white/50 transition-all flex items-center justify-center gap-2">
+                <span>🏆 3. เปรียบเทียบ 3 สิ่งเจาะจง</span>
+            </button>
+            <button onclick="switchTab('tab4', this)" class="tab-btn w-full md:w-auto px-4 py-3 rounded-xl md:rounded-full font-bold text-xs text-slate-700 hover:bg-white/50 transition-all flex items-center justify-center gap-2">
+                <span>🗺️ 4. ขั้นสุดตามหมวดหมู่</span>
+            </button>
+            <button onclick="switchTab('tab5', this)" class="tab-btn w-full md:w-auto px-4 py-3 rounded-xl md:rounded-full font-bold text-xs text-slate-700 hover:bg-white/50 transition-all flex items-center justify-center gap-2">
+                <span>🤝 5. ขั้นเท่ากัน & ไม่เท่ากัน</span>
+            </button>
+            <button onclick="switchTab('tab6', this)" class="tab-btn w-full md:w-auto px-4 py-3 rounded-xl md:rounded-full font-bold text-xs text-slate-700 hover:bg-white/50 transition-all flex items-center justify-center gap-2">
+                <span>🎯 6. ตะลุยแบบฝึกหัด</span>
+            </button>
+        </nav>
+    </div>
+
+    <!-- Main Content Area -->
+    <main class="max-w-5xl mx-auto px-4 py-8">
+
+        <!-- TAB 1: Adjectives -->
+        <div id="tab1" class="tab-content active space-y-6">
+            <div class="bg-white rounded-3xl p-6 md:p-8 shadow-sm border border-slate-100">
+                <div class="flex items-center gap-3 mb-6 border-b border-slate-100 pb-4">
+                    <span class="text-3xl">📖</span>
+                    <div>
+                        <h2 class="text-2xl font-bold text-slate-800">ตารางคำคุณศัพท์ที่สำคัญ (形容詞一覧)</h2>
+                        <p class="text-sm text-slate-500">คำศัพท์คุณศัพท์บอกคุณลักษณะที่พบบ่อยและใช้ในการเปรียบเทียบในบทเรียนที่ 13</p>
+                    </div>
+                </div>
+
+                <div class="overflow-x-auto rounded-2xl border border-slate-150">
+                    <table class="w-full text-left border-collapse">
+                        <thead>
+                            <tr class="bg-slate-100 text-slate-700 font-bold text-sm">
+                                <th class="p-4 border-b">คันจิ / ฮิรางานะ</th>
+                                <th class="p-4 border-b romaji-col">คำอ่านโรมาจิ</th>
+                                <th class="p-4 border-b text-red-600">คำแปลไทย</th>
+                                <th class="p-4 border-b">ประเภท</th>
+                                <th class="p-4 border-b">ตัวอย่างปฏิเสธ (รูปない)</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-100 text-sm">
+                            <tr class="hover:bg-slate-50 transition">
+                                <td class="p-4 font-semibold jp-font text-lg text-slate-800">古い <span class="text-xs text-slate-500 block font-normal">(ふるい)</span></td>
+                                <td class="p-4 text-slate-600 romaji-col font-mono">古い (furui)</td>
+                                <td class="p-4 font-semibold text-slate-900">เก่า, แก่ (สถานที่/สิ่งของ)</td>
+                                <td class="p-4"><span class="bg-blue-100 text-blue-700 text-xs px-2.5 py-1 rounded-full font-bold font-sans">คุณศัพท์ -i</span></td>
+                                <td class="p-4 text-xs text-red-500 font-semibold font-mono">古くない (furukunai)</td>
+                            </tr>
+                            <tr class="hover:bg-slate-50 transition">
+                                <td class="p-4 font-semibold jp-font text-lg text-slate-800">新しい <span class="text-xs text-slate-500 block font-normal">(あたらしい)</span></td>
+                                <td class="p-4 text-slate-600 romaji-col font-mono">新しい (atarashii)</td>
+                                <td class="p-4 font-semibold text-slate-900">ใหม่</td>
+                                <td class="p-4"><span class="bg-blue-100 text-blue-700 text-xs px-2.5 py-1 rounded-full font-bold font-sans">คุณศัพท์ -i</span></td>
+                                <td class="p-4 text-xs text-red-500 font-semibold font-mono">新しくない (atarashikunai)</td>
+                            </tr>
+                            <tr class="hover:bg-slate-50 transition">
+                                <td class="p-4 font-semibold jp-font text-lg text-slate-800">高い <span class="text-xs text-slate-500 block font-normal">(たかい)</span></td>
+                                <td class="p-4 text-slate-600 romaji-col font-mono">高い (takai)</td>
+                                <td class="p-4 font-semibold text-slate-900">แพง / สูง</td>
+                                <td class="p-4"><span class="bg-blue-100 text-blue-700 text-xs px-2.5 py-1 rounded-full font-bold font-sans">คุณศัพท์ -i</span></td>
+                                <td class="p-4 text-xs text-red-500 font-semibold font-mono">高くない (takakunai)</td>
+                            </tr>
+                            <tr class="hover:bg-slate-50 transition">
+                                <td class="p-4 font-semibold jp-font text-lg text-slate-800">安い <span class="text-xs text-slate-500 block font-normal">(やすい)</span></td>
+                                <td class="p-4 text-slate-600 romaji-col font-mono">安い (yasui)</td>
+                                <td class="p-4 font-semibold text-slate-900">ถูก (ราคา)</td>
+                                <td class="p-4"><span class="bg-blue-100 text-blue-700 text-xs px-2.5 py-1 rounded-full font-bold font-sans">คุณศัพท์ -i</span></td>
+                                <td class="p-4 text-xs text-red-500 font-semibold font-mono">安くない (yasukunai)</td>
+                            </tr>
+                            <tr class="hover:bg-slate-50 transition">
+                                <td class="p-4 font-semibold jp-font text-lg text-slate-800">大きい <span class="text-xs text-slate-500 block font-normal">(おおきい)</span></td>
+                                <td class="p-4 text-slate-600 romaji-col font-mono">大きい (ookii)</td>
+                                <td class="p-4 font-semibold text-slate-900">ใหญ่</td>
+                                <td class="p-4"><span class="bg-blue-100 text-blue-700 text-xs px-2.5 py-1 rounded-full font-bold font-sans">คุณศัพท์ -i</span></td>
+                                <td class="p-4 text-xs text-red-500 font-semibold font-mono">大きくない (ookikunai)</td>
+                            </tr>
+                            <tr class="hover:bg-slate-50 transition">
+                                <td class="p-4 font-semibold jp-font text-lg text-slate-800">小さい <span class="text-xs text-slate-500 block font-normal">(ちいさい)</span></td>
+                                <td class="p-4 text-slate-600 romaji-col font-mono">小さい (chiisai)</td>
+                                <td class="p-4 font-semibold text-slate-900">เล็ก</td>
+                                <td class="p-4"><span class="bg-blue-100 text-blue-700 text-xs px-2.5 py-1 rounded-full font-bold font-sans">คุณศัพท์ -i</span></td>
+                                <td class="p-4 text-xs text-red-500 font-semibold font-mono">小さくない (chiisakunai)</td>
+                            </tr>
+                            <tr class="hover:bg-slate-50 transition">
+                                <td class="p-4 font-semibold jp-font text-lg text-slate-800">すっぱい <span class="text-xs text-slate-500 block font-normal">(すっぱい)</span></td>
+                                <td class="p-4 text-slate-600 romaji-col font-mono">すっぱい (suppai)</td>
+                                <td class="p-4 font-semibold text-slate-900">เปรี้ยว</td>
+                                <td class="p-4"><span class="bg-blue-100 text-blue-700 text-xs px-2.5 py-1 rounded-full font-bold font-sans">คุณศัพท์ -i</span></td>
+                                <td class="p-4 text-xs text-red-500 font-semibold font-mono">すっぱくない (suppakunai)</td>
+                            </tr>
+                            <tr class="hover:bg-slate-50 transition">
+                                <td class="p-4 font-semibold jp-font text-lg text-slate-800">甘い <span class="text-xs text-slate-500 block font-normal">(あまい)</span></td>
+                                <td class="p-4 text-slate-600 romaji-col font-mono">甘い (amai)</td>
+                                <td class="p-4 font-semibold text-slate-900">หวาน</td>
+                                <td class="p-4"><span class="bg-blue-100 text-blue-700 text-xs px-2.5 py-1 rounded-full font-bold font-sans">คุณศัพท์ -i</span></td>
+                                <td class="p-4 text-xs text-red-500 font-semibold font-mono">甘くない (amakunai)</td>
+                            </tr>
+                            <tr class="hover:bg-slate-50 transition">
+                                <td class="p-4 font-semibold jp-font text-lg text-slate-800">おいしい <span class="text-xs text-slate-500 block font-normal">(おいしい)</span></td>
+                                <td class="p-4 text-slate-600 romaji-col font-mono">おいしい (oishii)</td>
+                                <td class="p-4 font-semibold text-slate-900">อร่อย</td>
+                                <td class="p-4"><span class="bg-blue-100 text-blue-700 text-xs px-2.5 py-1 rounded-full font-bold font-sans">คุณศัพท์ -i</span></td>
+                                <td class="p-4 text-xs text-red-500 font-semibold font-mono">おいしくない (oishikunai)</td>
+                            </tr>
+                            <tr class="hover:bg-slate-50 transition">
+                                <td class="p-4 font-semibold jp-font text-lg text-slate-800">おもしろい <span class="text-xs text-slate-500 block font-normal">(おもしろい)</span></td>
+                                <td class="p-4 text-slate-600 romaji-col font-mono">おもしろい (omoshiroi)</td>
+                                <td class="p-4 font-semibold text-slate-900">น่าสนุก, น่าสนใจ</td>
+                                <td class="p-4"><span class="bg-blue-100 text-blue-700 text-xs px-2.5 py-1 rounded-full font-bold font-sans">คุณศัพท์ -i</span></td>
+                                <td class="p-4 text-xs text-red-500 font-semibold font-mono">おもしろくない (omoshirokunai)</td>
+                            </tr>
+                            <tr class="hover:bg-slate-50 transition">
+                                <td class="p-4 font-semibold jp-font text-lg text-slate-800">速い <span class="text-xs text-slate-500 block font-normal">(はやい)</span></td>
+                                <td class="p-4 text-slate-600 romaji-col font-mono">速い (hayai)</td>
+                                <td class="p-4 font-semibold text-slate-900">เร็ว</td>
+                                <td class="p-4"><span class="bg-blue-100 text-blue-700 text-xs px-2.5 py-1 rounded-full font-bold font-sans">คุณศัพท์ -i</span></td>
+                                <td class="p-4 text-xs text-red-500 font-semibold font-mono">速くない (hayakunai)</td>
+                            </tr>
+                            <tr class="hover:bg-slate-50 transition">
+                                <td class="p-4 font-semibold jp-font text-lg text-slate-800">暑い <span class="text-xs text-slate-500 block font-normal">(あつい)</span></td>
+                                <td class="p-4 text-slate-600 romaji-col font-mono">暑い (atsui)</td>
+                                <td class="p-4 font-semibold text-slate-900">ร้อน (สภาพอากาศ)</td>
+                                <td class="p-4"><span class="bg-blue-100 text-blue-700 text-xs px-2.5 py-1 rounded-full font-bold font-sans">คุณศัพท์ -i</span></td>
+                                <td class="p-4 text-xs text-red-500 font-semibold font-mono">暑くない (atsukunai)</td>
+                            </tr>
+                            <tr class="hover:bg-slate-50 transition">
+                                <td class="p-4 font-semibold jp-font text-lg text-slate-800">好き <span class="text-xs text-slate-500 block font-normal">(すき)</span></td>
+                                <td class="p-4 text-slate-600 romaji-col font-mono">好き (suki)</td>
+                                <td class="p-4 font-semibold text-slate-900">ชอบ</td>
+                                <td class="p-4"><span class="bg-emerald-100 text-emerald-700 text-xs px-2.5 py-1 rounded-full font-bold font-sans">คุณศัพท์ -na</span></td>
+                                <td class="p-4 text-xs text-red-500 font-semibold font-mono">好きではない (suki de wa nai)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 2: Comparison of 2 Things -->
+        <div id="tab2" class="tab-content space-y-8">
+            <div class="bg-white rounded-3xl p-6 md:p-8 shadow-sm border border-slate-100">
+                <div class="flex items-center gap-3 mb-6 border-b border-slate-100 pb-4">
+                    <span class="text-3xl">⚖️</span>
+                    <div>
+                        <h2 class="text-2xl font-bold text-slate-800">2. การเปรียบเทียบของ 2 สิ่ง (สองสิ่งเปรียบเทียบ)</h2>
+                        <p class="text-sm text-slate-500">เปรียบเทียบลักษณะเด่นของสิ่งของหรือสถานที่ 2 ชิ้น โดยชี้เฉพาะเจาะจง</p>
+                    </div>
+                </div>
+
+                <!-- Grammar Rule Block -->
+                <div class="bg-gradient-to-r from-red-500/10 to-rose-500/10 border border-red-100 rounded-2xl p-5 mb-8">
+                    <h3 class="font-extrabold text-red-800 mb-3 flex items-center gap-2">
+                        <span>💡 โครงสร้างหลัก</span>
+                    </h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="space-y-2">
+                            <span class="text-xs font-bold uppercase tracking-wider bg-red-100 text-red-700 px-3 py-1 rounded-full">ประโยคคำถาม</span>
+                            <p class="text-xl font-bold jp-font text-slate-900">N1 と N2 と どちらが [คุณศัพท์] ですか。</p>
+                            <p class="text-xs text-slate-500 romaji-col font-mono">N1 to N2 to dochira ga [Adj] desu ka?</p>
+                            <p class="text-sm text-slate-600">แปล: ระหว่าง N1 และ N2 อันไหน [คุณศัพท์] กว่ากัน?</p>
+                        </div>
+                        <div class="space-y-2 border-t md:border-t-0 md:border-l border-slate-200 pt-4 md:pt-0 md:pl-6">
+                            <span class="text-xs font-bold uppercase tracking-wider bg-emerald-100 text-emerald-700 px-3 py-1 rounded-full">ประโยคคำตอบ</span>
+                            <div class="space-y-3">
+                                <div>
+                                    <p class="text-lg font-bold jp-font text-slate-900">N1/N2 の方が [คุณศัพท์] です。</p>
+                                    <p class="text-xs text-slate-500 romaji-col font-mono">... no hou ga [Adj] desu.</p>
+                                    <p class="text-sm text-slate-600">แปล: ฝั่ง ... [คุณศัพท์] กว่าครับ/ค่ะ</p>
+                                </div>
+                                <div class="pt-2 border-t border-dashed border-slate-200">
+                                    <p class="text-base font-bold jp-font text-slate-900">どちらも [คุณศัพท์] です。</p>
+                                    <p class="text-xs text-slate-500 romaji-col font-mono">Dochira mo [Adj] desu.</p>
+                                    <p class="text-sm text-slate-600">แปล: [คุณศัพท์] ทั้งคู่เลยครับ/ค่ะ</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Showcase Grid of Examples (Expanded to 6 detailed pairs!) -->
+                <h3 class="text-xl font-bold text-slate-800 mb-6 flex items-center gap-2">
+                    <span>🖼️ คอลเลกชันตัวอย่างเปรียบเทียบ 2 สิ่งอย่างละเอียด</span>
+                </h3>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    
+                    <!-- Example 1: Lamphun vs Chiang Mai -->
+                    <div class="border border-slate-100 rounded-2xl p-5 bg-slate-50 hover:shadow-md transition">
+                        <div class="flex justify-between items-center mb-3">
+                            <span class="bg-amber-100 text-amber-800 text-xs px-2.5 py-1 rounded-full font-bold font-sans">คู่ที่ 1: เมืองเก่าแก่</span>
+                            <span class="text-xs font-bold text-slate-400 font-mono">古い (furui)</span>
+                        </div>
+                        <div class="h-28 bg-white border border-slate-100 rounded-xl mb-4 flex justify-around items-center p-2">
+                            <div class="text-center">
+                                <span class="text-3xl">🛕</span>
+                                <p class="text-xs font-bold mt-1 text-slate-700">ลำพูน (Lamphun)</p>
+                                <span class="text-[10px] bg-red-100 text-red-700 px-1.5 py-0.5 rounded font-bold">1,300 ปี (古)</span>
+                            </div>
+                            <span class="font-bold text-slate-300">VS</span>
+                            <div class="text-center opacity-60">
+                                <span class="text-3xl">🛕</span>
+                                <p class="text-xs font-bold mt-1 text-slate-700">เชียงใหม่ (Chiang Mai)</p>
+                                <span class="text-[10px] bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded font-bold font-sans">700 ปี</span>
+                            </div>
+                        </div>
+                        <div class="space-y-2 text-sm">
+                            <p class="font-bold jp-font text-slate-800">Q: ランプーンと チェンマイと どちらが古いですか。</p>
+                            <p class="text-xs text-slate-500 romaji-col font-mono">Ranpuun to Chenmai to dochira ga furui desu ka?</p>
+                            <p class="font-semibold text-emerald-600 jp-font">A: ランプーンの方が古いです。</p>
+                            <p class="text-xs text-slate-500 romaji-col font-mono">Ranpuun no hou ga furui desu.</p>
+                        </div>
+                    </div>
+
+                    <!-- Example 2: Mangosteen vs Rambutan -->
+                    <div class="border border-slate-100 rounded-2xl p-5 bg-slate-50 hover:shadow-md transition">
+                        <div class="flex justify-between items-center mb-3">
+                            <span class="bg-purple-100 text-purple-800 text-xs px-2.5 py-1 rounded-full font-bold font-sans">คู่ที่ 2: ผลไม้ราคาแพง</span>
+                            <span class="text-xs font-bold text-slate-400 font-mono">高い (takai)</span>
+                        </div>
+                        <div class="h-28 bg-white border border-slate-100 rounded-xl mb-4 flex justify-around items-center p-2">
+                            <div class="text-center">
+                                <span class="text-3xl inline-block">
+                                    <svg class="w-9 h-9 mx-auto" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <circle cx="32" cy="36" r="20" fill="#4A154B" />
+                                        <path d="M32 10 C29 18, 22 20, 16 18 C22 23, 32 22, 32 22 C32 22, 42 23, 48 18 C42 20, 35 18, 32 10 Z" fill="#4CAF50" />
+                                        <rect x="30" y="4" width="4" height="8" fill="#4CAF50" rx="2" />
+                                    </svg>
+                                </span>
+                                <p class="text-xs font-bold mt-1 text-slate-700 font-sans">มังคุด (Mangosteen)</p>
+                                <span class="text-[10px] bg-red-100 text-red-700 px-1.5 py-0.5 rounded font-bold">80 บาท (高)</span>
+                            </div>
+                            <span class="font-bold text-slate-300">VS</span>
+                            <div class="text-center opacity-60">
+                                <span class="text-3xl">🍓</span>
+                                <p class="text-xs font-bold mt-1 text-slate-700">เงาะ (Rambutan)</p>
+                                <span class="text-[10px] bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded font-bold">50 บาท</span>
+                            </div>
+                        </div>
+                        <div class="space-y-2 text-sm">
+                            <p class="font-bold jp-font text-slate-800">Q: マンゴスチンと  ランブータンと どちらが高いですか。</p>
+                            <p class="text-xs text-slate-500 romaji-col font-mono">Mangosuchin to ranbuutan to dochira ga takai desu ka?</p>
+                            <p class="font-semibold text-emerald-600 jp-font">A: マンゴスチンの方が高いです。</p>
+                            <p class="text-xs text-slate-500 romaji-col font-mono">Mangosuchin no hou ga takai desu.</p>
+                        </div>
+                    </div>
+
+                    <!-- Example 3: Grape vs Mango -->
+                    <div class="border border-slate-100 rounded-2xl p-5 bg-slate-50 hover:shadow-md transition">
+                        <div class="flex justify-between items-center mb-3">
+                            <span class="bg-yellow-100 text-yellow-800 text-xs px-2.5 py-1 rounded-full font-bold">คู่ที่ 3: รสชาติเปรี้ยว</span>
+                            <span class="text-xs font-bold text-slate-400 font-mono">すっぱい (suppai)</span>
+                        </div>
+                        <div class="h-28 bg-white border border-slate-100 rounded-xl mb-4 flex justify-around items-center p-2">
+                            <div class="text-center opacity-60">
+                                <span class="text-3xl">🍇</span>
+                                <p class="text-xs font-bold mt-1 text-slate-700">องุ่น (Grapes)</p>
+                            </div>
+                            <span class="font-bold text-slate-300">VS</span>
+                            <div class="text-center">
+                                <span class="text-3xl">🥭</span>
+                                <p class="text-xs font-bold mt-1 text-slate-700">มะม่วงดิบ (Mango)</p>
+                                <span class="text-[10px] bg-red-100 text-red-700 px-1.5 py-0.5 rounded font-bold">เปรี้ยวกว่า (酸)</span>
+                            </div>
+                        </div>
+                        <div class="space-y-2 text-sm">
+                            <p class="font-bold jp-font text-slate-800">Q: ぶどうと マンゴーと どちらがすっぱいですか。</p>
+                            <p class="text-xs text-slate-500 romaji-col font-mono">Budou to mangoo to dochira ga suppai desu ka?</p>
+                            <p class="font-semibold text-emerald-600 jp-font">A: マンゴーの方がすっぱいです。</p>
+                            <p class="text-xs text-slate-500 romaji-col font-mono">Mangoo no hou ga suppai desu.</p>
+                        </div>
+                    </div>
+
+                    <!-- Example 4: Bus vs Airplane -->
+                    <div class="border border-slate-100 rounded-2xl p-5 bg-slate-50 hover:shadow-md transition">
+                        <div class="flex justify-between items-center mb-3">
+                            <span class="bg-blue-100 text-blue-800 text-xs px-2.5 py-1 rounded-full font-bold">คู่ที่ 4: ความเร็วในการเดินทาง</span>
+                            <span class="text-xs font-bold text-slate-400 font-mono">速い (hayai)</span>
+                        </div>
+                        <div class="h-28 bg-white border border-slate-100 rounded-xl mb-4 flex justify-around items-center p-2">
+                            <div class="text-center opacity-60">
+                                <span class="text-3xl">🚌</span>
+                                <p class="text-xs font-bold mt-1 text-slate-700">รถบัส (Bus)</p>
+                            </div>
+                            <span class="font-bold text-slate-300">VS</span>
+                            <div class="text-center">
+                                <span class="text-3xl">✈️</span>
+                                <p class="text-xs font-bold mt-1 text-slate-700">เครื่องบิน (Airplane)</p>
+                                <span class="text-[10px] bg-red-100 text-red-700 px-1.5 py-0.5 rounded font-bold">เร็วกว่า (速)</span>
+                            </div>
+                        </div>
+                        <div class="space-y-2 text-sm">
+                            <p class="font-bold jp-font text-slate-800">Q: バスと ひこうきと どちらが速いですか。</p>
+                            <p class="text-xs text-slate-500 romaji-col font-mono">Basu to hikouki to dochira ga hayai desu ka?</p>
+                            <p class="font-semibold text-emerald-600 jp-font">A: ひこうきの方が速いです。</p>
+                            <p class="text-xs text-slate-500 romaji-col font-mono">Hikouki no hou ga hayai desu.</p>
+                        </div>
+                    </div>
+
+                    <!-- Example 5: Elephant vs Horse -->
+                    <div class="border border-slate-100 rounded-2xl p-5 bg-slate-50 hover:shadow-md transition">
+                        <div class="flex justify-between items-center mb-3">
+                            <span class="bg-teal-100 text-teal-800 text-xs px-2.5 py-1 rounded-full font-bold">คู่ที่ 5: ขนาดร่างกายของสัตว์</span>
+                            <span class="text-xs font-bold text-slate-400 font-mono">大きい (ookii)</span>
+                        </div>
+                        <div class="h-28 bg-white border border-slate-100 rounded-xl mb-4 flex justify-around items-center p-2">
+                            <div class="text-center">
+                                <span class="text-3xl">🐘</span>
+                                <p class="text-xs font-bold mt-1 text-slate-700">ช้าง (Zou)</p>
+                                <span class="text-[10px] bg-red-100 text-red-700 px-1.5 py-0.5 rounded font-bold">ใหญ่กว่า (大)</span>
+                            </div>
+                            <span class="font-bold text-slate-300">VS</span>
+                            <div class="text-center opacity-60">
+                                <span class="text-3xl">🐎</span>
+                                <p class="text-xs font-bold mt-1 text-slate-700">ม้า (Uma)</p>
+                            </div>
+                        </div>
+                        <div class="space-y-2 text-sm">
+                            <p class="font-bold jp-font text-slate-800">Q: ぞうと うまと どちらが大きいですか。</p>
+                            <p class="text-xs text-slate-500 romaji-col font-mono">Zou to uma to dochira ga ookii desu ka?</p>
+                            <p class="font-semibold text-emerald-600 jp-font">A: ぞうの方が大きいです。</p>
+                            <p class="text-xs text-slate-500 romaji-col font-mono">Zou no hou ga ookii desu.</p>
+                        </div>
+                    </div>
+
+                    <!-- Example 6: Thailand vs Japan -->
+                    <div class="border border-slate-100 rounded-2xl p-5 bg-slate-50 hover:shadow-md transition">
+                        <div class="flex justify-between items-center mb-3">
+                            <span class="bg-indigo-100 text-indigo-800 text-xs px-2.5 py-1 rounded-full font-bold">คู่ที่ 6: ขนาดพื้นที่ประเทศ</span>
+                            <span class="text-xs font-bold text-slate-400 font-mono">大きい (ookii)</span>
+                        </div>
+                        <div class="h-28 bg-white border border-slate-100 rounded-xl mb-4 flex justify-around items-center p-2">
+                            <div class="text-center">
+                                <span class="text-3xl">🇹🇭</span>
+                                <p class="text-xs font-bold mt-1 text-slate-700">ไทย (Thailand)</p>
+                                <span class="text-[10px] bg-red-100 text-red-700 px-1.5 py-0.5 rounded font-bold">ใหญ่กว่า (大)</span>
+                            </div>
+                            <span class="font-bold text-slate-300">VS</span>
+                            <div class="text-center opacity-60">
+                                <span class="text-3xl">🇯🇵</span>
+                                <p class="text-xs font-bold mt-1 text-slate-700">ญี่ปุ่น (Japan)</p>
+                            </div>
+                        </div>
+                        <div class="space-y-2 text-sm">
+                            <p class="font-bold jp-font text-slate-800">Q: タイと 日本と どちらが大きいですか。</p>
+                            <p class="text-xs text-slate-500 romaji-col font-mono">Tai to Nihon to dochira ga ookii desu ka?</p>
+                            <p class="font-semibold text-emerald-600 jp-font">A: タイの方が大きいです。</p>
+                            <p class="text-xs text-slate-500 romaji-col font-mono">Tai no hou ga ookii desu.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 3: Comparison of 3 specific things -->
+        <div id="tab3" class="tab-content space-y-6">
+            <div class="bg-white rounded-3xl p-6 md:p-8 shadow-sm border border-slate-100">
+                <div class="flex items-center gap-3 mb-6 border-b border-slate-100 pb-4">
+                    <span class="text-3xl">🏆</span>
+                    <div>
+                        <h2 class="text-2xl font-bold text-slate-800">3. การเปรียบเทียบ 3 สิ่งเจาะจง (N1, N2, N3)</h2>
+                        <p class="text-sm text-slate-500">เปรียบเทียบระหว่างของ 3 ชิ้นโดยระบุชื่อสิ่งของชัดเจน เพื่อหาผู้ที่เป็น "ที่สุด" ของกลุ่ม</p>
+                    </div>
+                </div>
+
+                <!-- 3-Item Grammar Rule Block -->
+                <div class="bg-gradient-to-r from-red-500/10 to-pink-500/10 border border-red-100 rounded-2xl p-5 mb-8">
+                    <h3 class="font-bold text-red-800 mb-3 flex items-center gap-2">
+                        <span>⭐ โครงสร้างประโยคระบุ 3 สิ่ง</span>
+                    </h3>
+                    <div class="space-y-4 text-sm">
+                        <div>
+                            <span class="text-xs font-bold bg-red-100 text-red-700 px-2.5 py-1 rounded-full uppercase">ประโยคคำถาม</span>
+                            <p class="text-lg md:text-xl font-bold jp-font text-slate-900 mt-2">N1 と N2 と N3 の中で <span class="text-red-600">どれ</span> が いちばん [คุณศัพท์] ですか。</p>
+                            <p class="text-xs text-slate-500 romaji-col font-mono mt-0.5">N1 to N2 to N3 no naka de dore ga ichiban [Adj] desu ka?</p>
+                            <p class="text-slate-600 mt-1 font-sans">คำอธิบาย: ใช้คำเชื่อม "と" เชื่อมระหว่างตัวเลือกทั้งสาม และใช้ "どれ" (สิ่งไหน) เป็นคำสรรพนามชี้คำถามสำหรับตัวเลือกเฉพาะเจาะจง</p>
+                        </div>
+                        <hr class="border-red-100" />
+                        <div>
+                            <span class="text-xs font-bold bg-emerald-100 text-emerald-700 px-2.5 py-1 rounded-full uppercase">ประโยคคำตอบ</span>
+                            <p class="text-base md:text-lg font-bold jp-font text-slate-900 mt-2">[N ที่เลือก] が いちばん [คุณศัพท์] です。</p>
+                            <p class="text-xs text-slate-500 romaji-col font-mono mt-0.5">... ga ichiban [Adj] desu.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Showcase Example for 3 items (Expanded with 3 detailed scenarios!) -->
+                <h3 class="text-lg font-bold text-slate-800 mb-4">ตัวอย่างสถานการณ์เปรียบเทียบ 3 สิ่งเจาะจง</h3>
+                
+                <div class="space-y-6">
+
+                    <!-- Scenario 1: Fruits (Apple / Banana / Orange) -->
+                    <div class="border border-slate-100 rounded-2xl p-5 bg-slate-50">
+                        <span class="bg-pink-150 text-pink-700 text-xs px-2.5 py-0.5 rounded-full font-bold">ตัวอย่างที่ 1: เปรียบเทียบความชอบผลไม้</span>
+                        <div class="h-28 bg-white border border-slate-100 rounded-xl my-4 flex justify-around items-center p-2">
+                            <div class="text-center">
+                                <span class="text-4xl block">🍎</span>
+                                <span class="text-xs font-bold block text-slate-700 mt-1">แอปเปิ้ล (Ringo)</span>
+                                <span class="text-[10px] bg-red-100 text-red-700 px-1.5 py-0.5 rounded font-bold">いちばん 好き！</span>
+                            </div>
+                            <span class="text-slate-300 font-bold">และ</span>
+                            <div class="text-center opacity-50">
+                                <span class="text-4xl block">🍌</span>
+                                <span class="text-xs font-bold block text-slate-700 mt-1">กล้วย (Banana)</span>
+                            </div>
+                            <span class="text-slate-300 font-bold">และ</span>
+                            <div class="text-center opacity-50">
+                                <span class="text-4xl block">🍊</span>
+                                <span class="text-xs font-bold block text-slate-700 mt-1">ส้ม (Orenji)</span>
+                            </div>
+                        </div>
+                        <div class="space-y-2 text-sm">
+                            <p class="font-bold jp-font text-slate-800 text-base">Q: りんごと バナナと オレンジの 中で どれが いちばん 好きですか。</p>
+                            <p class="text-xs text-slate-500 romaji-col font-mono">Ringo to banana to orenji no naka de dore ga ichiban suki desu ka?</p>
+                            <p class="font-semibold text-emerald-600 jp-font text-base">A: りんごが いちばん 好きです。</p>
+                            <p class="text-xs text-slate-500 romaji-col font-mono">Ringo ga ichiban suki desu.</p>
+                            <p class="text-xs text-slate-600">คำแปล: ระหว่างแอปเปิ้ล กล้วย และส้ม อันไหนชอบที่สุด? -> ชอบแอปเปิ้ลมากที่สุดครับ</p>
+                        </div>
+                    </div>
+
+                    <!-- Scenario 2: Foods/Menus (Ramen / Sushi / Tom Yum Goong) -->
+                    <div class="border border-slate-100 rounded-2xl p-5 bg-slate-50">
+                        <span class="bg-amber-150 text-amber-700 text-xs px-2.5 py-0.5 rounded-full font-bold">ตัวอย่างที่ 2: เปรียบเทียบราคาอาหาร</span>
+                        <div class="h-28 bg-white border border-slate-100 rounded-xl my-4 flex justify-around items-center p-2">
+                            <div class="text-center opacity-50">
+                                <span class="text-4xl block">🍜</span>
+                                <span class="text-xs font-bold block text-slate-700 mt-1">ราเม็ง (Ramen)</span>
+                                <span class="text-[10px] text-slate-500">180 บาท</span>
+                            </div>
+                            <span class="text-slate-300 font-bold">และ</span>
+                            <div class="text-center opacity-50">
+                                <span class="text-4xl block">🍣</span>
+                                <span class="text-xs font-bold block text-slate-700 mt-1">ซูชิ (Sushi)</span>
+                                <span class="text-[10px] text-slate-500">220 บาท</span>
+                            </div>
+                            <span class="text-slate-300 font-bold">และ</span>
+                            <div class="text-center">
+                                <span class="text-4xl block">🍲</span>
+                                <span class="text-xs font-bold block text-slate-700 mt-1">ต้มยำกุ้ง (Tom Yum)</span>
+                                <span class="text-[10px] bg-red-100 text-red-700 px-1.5 py-0.5 rounded font-bold">350 บาท (いちばん高い!)</span>
+                            </div>
+                        </div>
+                        <div class="space-y-2 text-sm">
+                            <p class="font-bold jp-font text-slate-800 text-base">Q: ラーメンと すしと トムヤムクンの 中で どれが いちばん 高いですか。</p>
+                            <p class="text-xs text-slate-500 romaji-col font-mono">Raamen to sushi to tomuyamukun no naka de dore ga ichiban takai desu ka?</p>
+                            <p class="font-semibold text-emerald-600 jp-font text-base">A: トムヤムクンが いちばん 高いです。</p>
+                            <p class="text-xs text-slate-500 romaji-col font-mono">Tomuyamukun ga ichiban takai desu.</p>
+                            <p class="text-xs text-slate-600">คำแปล: ระหว่างราเม็ง ซูชิ และต้มยำกุ้ง เมนูไหนราคาแพงที่สุด? -> ต้มยำกุ้งราคาแพงที่สุดครับ</p>
+                        </div>
+                    </div>
+
+                    <!-- Scenario 3: Cities/Locations (Tokyo / Bangkok / Chiang Mai) -->
+                    <div class="border border-slate-100 rounded-2xl p-5 bg-slate-50">
+                        <span class="bg-blue-150 text-blue-700 text-xs px-2.5 py-0.5 rounded-full font-bold">ตัวอย่างที่ 3: เปรียบเทียบสภาพอากาศเมืองใหญ่</span>
+                        <div class="h-28 bg-white border border-slate-100 rounded-xl my-4 flex justify-around items-center p-2">
+                            <div class="text-center opacity-50">
+                                <span class="text-4xl block">🗼</span>
+                                <span class="text-xs font-bold block text-slate-700 mt-1">โตเกียว (Toukyou)</span>
+                                <span class="text-[10px] text-slate-500">22 °C</span>
+                            </div>
+                            <span class="text-slate-300 font-bold">และ</span>
+                            <div class="text-center">
+                                <span class="text-4xl block">🏙️🌡️</span>
+                                <span class="text-xs font-bold block text-slate-700 mt-1">กรุงเทพฯ (Bankoku)</span>
+                                <span class="text-[10px] bg-red-100 text-red-700 px-1.5 py-0.5 rounded font-bold">36 °C (いちばん暑い!)</span>
+                            </div>
+                            <span class="text-slate-300 font-bold">และ</span>
+                            <div class="text-center opacity-50">
+                                <span class="text-4xl block">⛰️</span>
+                                <span class="text-xs font-bold block text-slate-700 mt-1">เชียงใหม่ (Chenmai)</span>
+                                <span class="text-[10px] text-slate-500">28 °C</span>
+                            </div>
+                        </div>
+                        <div class="space-y-2 text-sm">
+                            <p class="font-bold jp-font text-slate-800 text-base">Q: 東京と バンコクと  チェンマイの 中で どこが いちばん 暑いですか。</p>
+                            <p class="text-xs text-slate-500 romaji-col font-mono">Toukyou to Bankoku to Chenmai no naka de doko ga ichiban atsui desu ka?</p>
+                            <p class="font-semibold text-emerald-600 jp-font text-base">A: バンコクが いちばん 暑いです。</p>
+                            <p class="text-xs text-slate-500 romaji-col font-mono">Bankoku ga ichiban atsui desu.</p>
+                            <p class="text-xs text-slate-600">คำแปล: ระหว่างโตเกียว กรุงเทพฯ และเชียงใหม่ ที่ไหนร้อนที่สุด? -> กรุงเทพฯ ร้อนที่สุดครับ</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 4: Most in category -->
+        <div id="tab4" class="tab-content space-y-6">
+            <div class="bg-white rounded-3xl p-6 md:p-8 shadow-sm border border-slate-100">
+                <div class="flex items-center gap-3 mb-6 border-b border-slate-100 pb-4">
+                    <span class="text-3xl">🗺️</span>
+                    <div>
+                        <h2 class="text-2xl font-bold text-slate-800">4. การเปรียบเทียบที่สุดแบบระบุหมวดหมู่</h2>
+                        <p class="text-sm text-slate-500">เปรียบเทียบภาพกว้างโดยระบุชื่อกลุ่มคำนาม หรือขอบเขตของประเภทนั้นๆ (Category)</p>
+                    </div>
+                </div>
+
+                <div class="bg-rose-50/50 border border-rose-100 rounded-2xl p-5 mb-8">
+                    <h3 class="font-bold text-rose-800 mb-2">⭐ โครงสร้างไวยากรณ์</h3>
+                    <p class="text-lg md:text-xl font-bold jp-font text-slate-900">N(หมวดหมู่) の中で <span class="text-red-600">[何 / だれ / いつ / どこ]</span> が いちばん [คุณศัพท์] ですか。</p>
+                    <p class="text-xs text-slate-500 romaji-col font-mono mt-0.5 font-sans">N(Category) no naka de [nani / dare / itsu / doko] ga ichiban [Adj] desu ka?</p>
+                </div>
+
+                <!-- Expanded list of Category Examples with Emoji Illustrations -->
+                <h3 class="text-lg font-bold text-slate-800 mb-4">ตัวอย่างเปรียบเทียบในแต่ละหมวดหมู่จำแนกตามคำถาม</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    
+                    <!-- Example 1: Fruits (nani) -->
+                    <div class="border border-slate-150 rounded-2xl p-5 bg-slate-50 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between">
+                                <span class="bg-amber-100 text-amber-800 text-xs px-2.5 py-1 rounded-full font-bold">หมวดผลไม้: ใช้ อะไร (何 - nani)</span>
+                                <span class="text-2xl">🍎🍌🍊</span>
+                            </div>
+                            <div class="mt-4 space-y-2 text-sm">
+                                <p class="font-bold jp-font">Q: くだものの中で 何がいちばん好きですか。</p>
+                                <p class="text-xs text-slate-500 romaji-col font-mono">Kudamono no naka de nani ga ichiban suki desu ka?</p>
+                                <p class="font-semibold text-emerald-600 jp-font">A: りんごがいちばん好きです。</p>
+                                <p class="text-xs text-slate-500 romaji-col font-mono">Ringo ga ichiban suki desu.</p>
+                                <p class="text-xs text-slate-600">แปล: ในบรรดาผลไม้ทั้งหมด ชอบอะไรมากที่สุด? -> ชอบแอปเปิ้ลที่สุดครับ</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Example 2: Sports (nani) -->
+                    <div class="border border-slate-150 rounded-2xl p-5 bg-slate-50 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between">
+                                <span class="bg-teal-100 text-teal-800 text-xs px-2.5 py-1 rounded-full font-bold">หมวดกีฬา: ใช้ อะไร (何 - nani)</span>
+                                <span class="text-2xl">⚽🏀🏸</span>
+                            </div>
+                            <div class="mt-4 space-y-2 text-sm">
+                                <p class="font-bold jp-font">Q: スポーツの中で 何がいちばんおもしろいですか。</p>
+                                <p class="text-xs text-slate-500 romaji-col font-mono">Supootsu no naka de nani ga ichiban omoshiroi desu ka?</p>
+                                <p class="font-semibold text-emerald-600 jp-font">A: サッカーがいちばんおもしろいです。</p>
+                                <p class="text-xs text-slate-500 romaji-col font-mono">Sakkaa ga ichiban omoshiroi desu.</p>
+                                <p class="text-xs text-slate-600">แปล: ในบรรดากีฬา อะไรน่าสนุกที่สุด? -> ฟุตบอลสนุกที่สุดครับ</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Example 3: Friends (dare) -->
+                    <div class="border border-slate-150 rounded-2xl p-5 bg-slate-50 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between">
+                                <span class="bg-blue-100 text-blue-800 text-xs px-2.5 py-1 rounded-full font-bold">หมวดบุคคล/เพื่อน: ใช้ ใคร (だれ - dare)</span>
+                                <span class="text-2xl">👥👦👧</span>
+                            </div>
+                            <div class="mt-4 space-y-2 text-sm">
+                                <p class="font-bold jp-font">Q: 友達の中で だれがいちばん背が高いですか。</p>
+                                <p class="text-xs text-slate-500 romaji-col font-mono">Tomodachi no naka de dare ga ichiban se ga takai desu ka?</p>
+                                <p class="font-semibold text-emerald-600 jp-font">A: タナポンさんがいちばん高いです。</p>
+                                <p class="text-xs text-slate-500 romaji-col font-mono">Tanapon-san ga ichiban takai desu.</p>
+                                <p class="text-xs text-slate-600">แปล: ในบรรดากลุ่มเพื่อน ใครตัวสูงที่สุด? -> คุณธนพลตัวสูงที่สุดครับ</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Example 4: Seasons/Year (itsu) -->
+                    <div class="border border-slate-150 rounded-2xl p-5 bg-slate-50 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between">
+                                <span class="bg-orange-100 text-orange-800 text-xs px-2.5 py-1 rounded-full font-bold">หมวดเวลา/ช่วงปี: ใช้ เมื่อไหร่ (いつ - itsu)</span>
+                                <span class="text-2xl">🌸☀️🍁❄️</span>
+                            </div>
+                            <div class="mt-4 space-y-2 text-sm">
+                                <p class="font-bold jp-font">Q: 1年の中で いつがいちばん暑いですか。</p>
+                                <p class="text-xs text-slate-500 romaji-col font-mono">Ichinen no naka de itsu ga ichiban atsui desu ka?</p>
+                                <p class="font-semibold text-emerald-600 jp-font">A: 4月がいちばん暑いです。</p>
+                                <p class="text-xs text-slate-500 romaji-col font-mono">Shigatsu ga ichiban atsui desu.</p>
+                                <p class="text-xs text-slate-600">แปล: ในรอบ 1 ปี ช่วงเวลาไหนร้อนที่สุด? -> เดือนเมษายนร้อนที่สุดครับ</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Example 5: Tourism (doko) -->
+                    <div class="border border-slate-150 rounded-2xl p-5 bg-slate-50 flex flex-col justify-between md:col-span-2">
+                        <div>
+                            <div class="flex items-center justify-between">
+                                <span class="bg-indigo-100 text-indigo-800 text-xs px-2.5 py-1 rounded-full font-bold">หมวดสถานที่ท่องเที่ยว: ใช้ ที่ไหน (どこ - doko)</span>
+                                <span class="text-2xl">🗺️🏝️⛩️</span>
+                            </div>
+                            <div class="mt-4 space-y-2 text-sm">
+                                <p class="font-bold jp-font">Q: タイのかんこうちの中で どこがいちばん古いですか。</p>
+                                <p class="text-xs text-slate-500 romaji-col font-mono">Tai no kankouchi no naka de doko ga ichiban furui desu ka?</p>
+                                <p class="font-semibold text-emerald-600 jp-font">A: スコータイがいちばん古いです。</p>
+                                <p class="text-xs text-slate-500 romaji-col font-mono">Sukuotai ga ichiban furui desu.</p>
+                                <p class="text-xs text-slate-600">แปล: ในบรรดาแหล่งท่องเที่ยวของไทย ที่ไหนเก่าแก่ที่สุด? -> สุโขทัยเก่าแก่ที่สุดครับ</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 5: Equal and Unequal -->
+        <div id="tab5" class="tab-content space-y-6">
+            
+            <!-- Equal Comparison (同じぐらい) -->
+            <div class="bg-white rounded-3xl p-6 md:p-8 shadow-sm border border-slate-100">
+                <div class="flex items-center gap-3 mb-6 border-b border-slate-100 pb-4">
+                    <span class="text-3xl">🤝</span>
+                    <div>
+                        <h2 class="text-2xl font-bold text-slate-800">5. การเปรียบเทียบขั้นเท่ากัน (พอ ๆ กัน)</h2>
+                        <p class="text-sm text-slate-500">แสดงถึงความเสมอภาค มีปริมาณ คุณสมบัติ หรือลักษณะเด่นในระดับที่เท่าเทียมกัน</p>
+                    </div>
+                </div>
+
+                <div class="bg-emerald-50/50 border border-emerald-150 rounded-2xl p-5 mb-8">
+                    <p class="text-lg md:text-xl font-bold jp-font text-slate-900">(N1 は) N2 と同じぐらい <span class="text-emerald-600">[Adj รูปบอกเล่า]</span> です。</p>
+                    <p class="text-xs text-slate-500 romaji-col font-mono mt-0.5 font-sans">(N1 wa) N2 to onaji gurai [Adj] desu.</p>
+                    <p class="text-sm text-slate-600 mt-1">แปลว่า: <strong>N1 [คุณศัพท์] พอ ๆ กับ N2 เลย</strong></p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    
+                    <!-- Equal Example 1: Watermelon vs Grapefruit -->
+                    <div class="border border-slate-100 rounded-2xl p-5 bg-slate-50">
+                        <div class="text-center font-bold text-xs text-emerald-700 bg-emerald-50 py-1 rounded-full mb-3 uppercase">ด้านขนาดร่างกาย</div>
+                        <div class="h-24 bg-white border border-slate-100 rounded-xl mb-3 flex justify-around items-center p-2">
+                            <span class="text-3xl">🍉</span>
+                            <span class="font-bold text-slate-300">≈</span>
+                            <span class="text-3xl">🍈</span>
+                        </div>
+                        <div class="space-y-1 text-xs">
+                            <p class="font-bold jp-font">スイカは メロンと同じぐらい  大きいです。</p>
+                            <p class="text-slate-500 romaji-col font-mono">Suika wa meron to onaji gurai ookii desu.</p>
+                            <p class="text-slate-600">แปล: แตงโมใหญ่พอๆ กับส้มโอเลยครับ</p>
+                        </div>
+                    </div>
+
+                    <!-- Equal Example 2: Banana vs Mango -->
+                    <div class="border border-slate-100 rounded-2xl p-5 bg-slate-50">
+                        <div class="text-center font-bold text-xs text-emerald-700 bg-emerald-50 py-1 rounded-full mb-3 uppercase">ด้านรสชาติความหวาน</div>
+                        <div class="h-24 bg-white border border-slate-100 rounded-xl mb-3 flex justify-around items-center p-2">
+                            <span class="text-3xl">🍌</span>
+                            <span class="font-bold text-slate-300">≈</span>
+                            <span class="text-3xl">🥭</span>
+                        </div>
+                        <div class="space-y-1 text-xs">
+                            <p class="font-bold jp-font">バナナは マンゴーと同じぐらい 甘いです。</p>
+                            <p class="text-slate-500 romaji-col font-mono">Banana wa mangoo to onaji gurai amai desu.</p>
+                            <p class="text-slate-600">แปล: กล้วยหวานพอๆ กับมะม่วงเลยครับ</p>
+                        </div>
+                    </div>
+
+                    <!-- Equal Example 3: Bus vs Train (Price) -->
+                    <div class="border border-slate-100 rounded-2xl p-5 bg-slate-50">
+                        <div class="text-center font-bold text-xs text-emerald-700 bg-emerald-50 py-1 rounded-full mb-3 uppercase">ด้านความประหยัดเงิน</div>
+                        <div class="h-24 bg-white border border-slate-100 rounded-xl mb-3 flex justify-around items-center p-2">
+                            <span class="text-3xl">🚌</span>
+                            <span class="font-bold text-slate-300">≈</span>
+                            <span class="text-3xl">🚋</span>
+                        </div>
+                        <div class="space-y-1 text-xs">
+                            <p class="font-bold jp-font">バスは 電車と同じぐらい 安いです。</p>
+                            <p class="text-slate-500 romaji-col font-mono">Basu wa densha to onaji gurai yasui desu.</p>
+                            <p class="text-slate-600">แปล: รถบัสราคาถูกพอๆ กับรถไฟเลยครับ</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Unequal Comparison (ほど...รูปปฏิเสธない) -->
+            <div class="bg-white rounded-3xl p-6 md:p-8 shadow-sm border border-slate-100">
+                <div class="flex items-center gap-3 mb-6 border-b border-slate-100 pb-4">
+                    <span class="text-3xl">📉</span>
+                    <div>
+                        <h2 class="text-2xl font-bold text-slate-800">การเปรียบเทียบขั้นไม่เท่ากัน (ไม่...เท่ากับ)</h2>
+                        <p class="text-sm text-slate-500">เปรียบเทียบและชี้ให้เห็นว่า N1 มีคุณสมบัติด้อยกว่า หรือไม่ถึงเกณฑ์ของ N2 (ต้องใช้คุณศัพท์รูปปฏิเสธเสมอ)</p>
+                    </div>
+                </div>
+
+                <div class="bg-amber-50/70 border border-amber-200 rounded-2xl p-5 mb-8">
+                    <p class="text-lg md:text-xl font-bold jp-font text-slate-900">(N1 は) N2 ほど <span class="text-red-600">[Adj รูปปฏิเสธ] ないです。</span></p>
+                    <p class="text-xs text-slate-500 romaji-col font-mono mt-0.5 font-sans">(N1 wa) N2 hodo [Adj-negative] nai desu.</p>
+                    <p class="text-sm text-slate-600 mt-1">แปลว่า: <strong>N1 ไม่ [คุณศัพท์] เท่า N2</strong> (หมายความว่า N2 มีคุณลักษณะนั้นมากกว่า)</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    
+                    <!-- Unequal Example 1: Rambutan vs Mangosteen (Price) -->
+                    <div class="border border-slate-100 rounded-2xl p-5 bg-slate-50">
+                        <div class="text-center font-bold text-xs text-amber-700 bg-amber-50 py-1 rounded-full mb-3 uppercase font-sans">ความแพงของผลไม้</div>
+                        <div class="h-24 bg-white border border-slate-100 rounded-xl mb-3 flex justify-around items-center p-2">
+                            <span class="text-3xl opacity-75 inline-flex items-center gap-1">
+                                <svg class="w-8 h-8" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="32" cy="34" r="16" fill="#D32F2F" />
+                                    <path d="M16 34 L10 34 M48 34 L54 34 M32 18 L32 12 M32 50 L32 56 M20 22 L15 17 M44 46 L49 51 M20 46 L15 51 M44 22 L49 17" stroke="#4CAF50" stroke-width="3" stroke-linecap="round" />
+                                </svg> (50B)
+                            </span>
+                            <span class="font-bold text-slate-300">&lt;</span>
+                            <span class="text-3xl inline-flex items-center gap-1">
+                                <svg class="w-8 h-8" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="32" cy="36" r="20" fill="#4A154B" />
+                                    <path d="M32 10 C29 18, 22 20, 16 18 C22 23, 32 22, 32 22 C32 22, 42 23, 48 18 C42 20, 35 18, 32 10 Z" fill="#4CAF50" />
+                                    <rect x="30" y="4" width="4" height="8" fill="#4CAF50" rx="2" />
+                                </svg> (80B)
+                            </span>
+                        </div>
+                        <div class="space-y-1 text-xs">
+                            <p class="font-bold jp-font">ランブータンは マンゴスチンほど 高くないです。</p>
+                            <p class="text-slate-500 romaji-col font-mono">Ranbuutan wa mangosuchin hodo takakunai desu.</p>
+                            <p class="text-slate-600">แปล: เงาะไม่แพงเท่ามังคุดครับ</p>
+                        </div>
+                    </div>
+
+                    <!-- Unequal Example 2: Chiang Mai vs Lamphun (History) (UPDATED: Torii emoji ⛩️ replaced with temple emoji 🛕 for Chiang Mai) -->
+                    <div class="border border-slate-100 rounded-2xl p-5 bg-slate-50">
+                        <div class="text-center font-bold text-xs text-amber-700 bg-amber-50 py-1 rounded-full mb-3 uppercase font-sans">อายุความเก่าแก่</div>
+                        <div class="h-24 bg-white border border-slate-100 rounded-xl mb-3 flex justify-around items-center p-2">
+                            <span class="text-3xl opacity-60">🛕 (700ปี)</span>
+                            <span class="font-bold text-slate-300">&lt;</span>
+                            <span class="text-3xl">🛕 (1,300ปี)</span>
+                        </div>
+                        <div class="space-y-1 text-xs">
+                            <p class="font-bold jp-font">チェンマイは  ランプーンほど 古くないです。</p>
+                            <p class="text-slate-500 romaji-col font-mono">Chenmai wa Ranpuun hodo furukunai desu.</p>
+                            <p class="text-slate-600">แปล: เชียงใหม่ไม่เก่าแก่เท่าลำพูนครับ</p>
+                        </div>
+                    </div>
+
+                    <!-- Unequal Example 3: Horse vs Elephant (Size) -->
+                    <div class="border border-slate-100 rounded-2xl p-5 bg-slate-50">
+                        <div class="text-center font-bold text-xs text-amber-700 bg-amber-50 py-1 rounded-full mb-3 uppercase font-sans">ขนาดความใหญ่ของสัตว์</div>
+                        <div class="h-24 bg-white border border-slate-100 rounded-xl mb-3 flex justify-around items-center p-2">
+                            <span class="text-3xl opacity-60">🐎 (500กก)</span>
+                            <span class="font-bold text-slate-300">&lt;</span>
+                            <span class="text-3xl">🐘 (4ตัน)</span>
+                        </div>
+                        <div class="space-y-1 text-xs">
+                            <p class="font-bold jp-font">うまは ぞうほど 大きくないです。</p>
+                            <p class="text-slate-500 romaji-col font-mono">Uma wa zou hodo ookikunai desu.</p>
+                            <p class="text-slate-600">แปล: ม้าตัวไม่ใหญ่เท่าช้างครับ</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 6: Exercises (Comprehensive & Writing expanded) -->
+        <div id="tab6" class="tab-content space-y-8">
+            
+            <!-- Exercise 1: Multiple Choice -->
+            <div class="bg-white rounded-3xl p-6 md:p-8 shadow-sm border border-slate-100">
+                <div class="flex items-center gap-3 mb-6 border-b border-slate-100 pb-4">
+                    <span class="text-2xl">📝</span>
+                    <div>
+                        <h2 class="text-xl font-bold text-slate-800">แบบฝีกหัดที่ 1: เลือกคำตอบที่ถูกต้อง (Multiple Choice)</h2>
+                        <p class="text-xs text-slate-500">ทบทวนความเข้าใจพื้นฐานการถามตอบ</p>
+                    </div>
+                </div>
+
+                <div class="space-y-6">
+                    <!-- Q1 -->
+                    <div class="p-4 rounded-xl border border-slate-100 bg-slate-50 space-y-3">
+                        <p class="font-bold text-slate-800">ข้อ 1: ระหว่างประเทศไทยกับญี่ปุ่น ประเทศไหนใหญ่กว่ากัน? จะแต่งประโยคคำถามได้อย่างไร?</p>
+                        <div class="grid grid-cols-1 gap-2 text-sm">
+                            <button onclick="checkAnswer(1, 0, this)" class="w-full text-left p-3 rounded-lg bg-white border border-slate-200 hover:border-slate-400 transition">A. タイと日本とどちらが大きいですか。 <span class="block text-slate-400 text-xs romaji-col font-sans">Tai to Nihon to dochira ga ookii desu ka?</span></button>
+                            <button onclick="checkAnswer(1, 1, this)" class="w-full text-left p-3 rounded-lg bg-white border border-slate-200 hover:border-slate-400 transition">B. タイと日本とどこがいちばん大きいですか。 <span class="block text-slate-400 text-xs romaji-col font-sans">Tai to Nihon to doko ga ichiban ookii desu ka?</span></button>
+                        </div>
+                        <div id="feedback-1" class="hidden text-xs font-bold p-2.5 rounded-lg animate-pulse"></div>
+                    </div>
+
+                    <!-- Q2 -->
+                    <div class="p-4 rounded-xl border border-slate-100 bg-slate-50 space-y-3">
+                        <p class="font-bold text-slate-800">ข้อ 2: "ในบรรดาผลไม้ ชอบแอปเปิ้ลที่สุด" จะแต่งประโยคตอบได้อย่างไร?</p>
+                        <div class="grid grid-cols-1 gap-2 text-sm">
+                            <button onclick="checkAnswer(2, 0, this)" class="w-full text-left p-3 rounded-lg bg-white border border-slate-200 hover:border-slate-400 transition">A. くだもののほうが りんごがいちばん好きです。 <span class="block text-slate-400 text-xs romaji-col font-sans font-normal">Kudamono no hou ga ringo ga ichiban suki desu.</span></button>
+                            <button onclick="checkAnswer(2, 1, this)" class="w-full text-left p-3 rounded-lg bg-white border border-slate-200 hover:border-slate-400 transition">B. くだものの中で りんごが いちばん 好きです。 <span class="block text-slate-400 text-xs romaji-col font-sans font-normal">Kudamono no naka de ringo ga ichiban suki desu.</span></button>
+                        </div>
+                        <div id="feedback-2" class="hidden text-xs font-bold p-2.5 rounded-lg animate-pulse"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Exercise 2: Fill in the Blanks (Romaji Guide included) -->
+            <div class="bg-white rounded-3xl p-6 md:p-8 shadow-sm border border-slate-100">
+                <div class="flex items-center gap-3 mb-6 border-b border-slate-100 pb-4">
+                    <span class="text-2xl">✒️</span>
+                    <div>
+                        <h2 class="text-xl font-bold text-slate-800">แบบฝึกหัดที่ 2: เติมคำในช่องว่าง (Fill in the Blanks)</h2>
+                        <p class="text-xs text-slate-500">พิมพ์คำช่วยหรือโครงสร้างเปรียบเทียบที่ถูกต้องลงในช่องว่าง</p>
+                    </div>
+                </div>
+
+                <div class="space-y-6">
+                    <!-- Blank 1 -->
+                    <div class="p-4 rounded-xl bg-slate-50 border border-slate-100 space-y-2">
+                        <p class="font-bold text-sm text-slate-700">คำถามที่ 1: ระหว่างเงาะกับมังคุด อันไหนแพงกว่ากัน?</p>
+                        <div class="flex flex-wrap items-center gap-2 font-semibold text-slate-800 text-base">
+                            <span>ランブータン</span>
+                            <input id="blank1" type="text" class="w-20 px-2 py-1 text-center bg-white border border-slate-300 rounded font-bold text-red-600 focus:outline-none" placeholder="と" />
+                            <span>マンゴスチン</span>
+                            <input id="blank2" type="text" class="w-20 px-2 py-1 text-center bg-white border border-slate-300 rounded font-bold text-red-600 focus:outline-none" placeholder="と" />
+                            <span>どちら</span>
+                            <input id="blank3" type="text" class="w-20 px-2 py-1 text-center bg-white border border-slate-300 rounded font-bold text-red-600 focus:outline-none" placeholder="..." />
+                            <span>高いですか。</span>
+                        </div>
+                        <p class="text-xs text-slate-400 romaji-col font-mono">Ranbuutan [..1..] mangosuchin [..2..] dochira [..3..] takai desu ka?</p>
+                    </div>
+
+                    <!-- Blank 2 -->
+                    <div class="p-4 rounded-xl bg-slate-50 border border-slate-100 space-y-2">
+                        <p class="font-bold text-sm text-slate-700">คำถามที่ 2: ในบรรดาแอปเปิ้ล กล้วย และส้ม อันไหนชอบที่สุด?</p>
+                        <div class="flex flex-wrap items-center gap-2 font-semibold text-slate-800 text-base">
+                            <span>りんごとバナナとオレンジ</span>
+                            <input id="blank4" type="text" class="w-28 px-2 py-1 text-center bg-white border border-slate-300 rounded font-bold text-red-600 focus:outline-none" placeholder="..." />
+                            <span>どれ</span>
+                            <input id="blank5" type="text" class="w-16 px-2 py-1 text-center bg-white border border-slate-300 rounded font-bold text-red-600 focus:outline-none" placeholder="..." />
+                            <span>いちばん好きですか。</span>
+                        </div>
+                        <p class="text-xs text-slate-400 romaji-col font-mono">Ringo to banana to orenji [..4..] dore [..5..] ichiban suki desu ka?</p>
+                    </div>
+
+                    <!-- Blank 3 -->
+                    <div class="p-4 rounded-xl bg-slate-50 border border-slate-100 space-y-2">
+                        <p class="font-bold text-sm text-slate-700">คำถามที่ 3: เชียงใหม่ไม่เก่าแก่เท่าลำพูน</p>
+                        <div class="flex flex-wrap items-center gap-2 font-semibold text-slate-800 text-base">
+                            <span>チェンマイは</span>
+                            <span>ランプーン</span>
+                            <input id="blank6" type="text" class="w-24 px-2 py-1 text-center bg-white border border-slate-300 rounded font-bold text-red-600 focus:outline-none" placeholder="..." />
+                            <span>古くないです。</span>
+                        </div>
+                        <p class="text-xs text-slate-400 romaji-col font-mono">Chenmai wa Ranpuun [..6..] furukunai desu.</p>
+                    </div>
+
+                    <!-- Blank 4 -->
+                    <div class="p-4 rounded-xl bg-slate-50 border border-slate-100 space-y-2">
+                        <p class="font-bold text-sm text-slate-700">คำถามที่ 4: แตงโมใหญ่พอ ๆ กับส้มโอ</p>
+                        <div class="flex flex-wrap items-center gap-2 font-semibold text-slate-800 text-base">
+                            <span>スイカは</span>
+                            <span>メロン</span>
+                            <input id="blank7" type="text" class="w-40 px-2 py-1 text-center bg-white border border-slate-300 rounded font-bold text-red-600 focus:outline-none" placeholder="..." />
+                            <span>大きいです。</span>
+                        </div>
+                        <p class="text-xs text-slate-400 romaji-col font-mono">Suika wa meron [..7..] ookii desu.</p>
+                    </div>
+
+                    <!-- Check Button -->
+                    <button onclick="checkAllBlanks()" class="bg-red-500 hover:bg-red-600 text-white font-bold px-6 py-2.5 rounded-xl shadow transition">ตรวจสอบคำตอบทั้งหมด</button>
+                    <div id="blanksFeedback" class="hidden text-sm font-bold p-3 rounded-xl mt-3 animate-bounce"></div>
+                </div>
+            </div>
+
+            <!-- Exercise 3: Translation & Writing Practice (NEW & EXPANDED) -->
+            <div class="bg-white rounded-3xl p-6 md:p-8 shadow-sm border border-slate-100">
+                <div class="flex items-center gap-3 mb-6 border-b border-slate-100 pb-4">
+                    <span class="text-2xl">✍️</span>
+                    <div>
+                        <h2 class="text-xl font-bold text-slate-800">แบบฝึกหัดที่ 3: ฝึกเขียนแต่งประโยค (Translation Writing Practice)</h2>
+                        <p class="text-xs text-slate-500">พิมพ์คำตอบภาษาญี่ปุ่นของคุณในช่องว่าง (พิมพ์ด้วยอักษรญี่ปุ่นหรือตัวอักษรโรมาจิแบบภาษาอังกฤษได้ทั้งสองแบบ) แล้วกดตรวจสอบเฉลย</p>
+                    </div>
+                </div>
+
+                <div class="space-y-8">
+                    <!-- Writing Task 1 -->
+                    <div class="p-5 rounded-2xl border border-slate-150 bg-slate-50 space-y-3">
+                        <span class="bg-amber-100 text-amber-800 text-xs px-2.5 py-1 rounded-full font-bold font-sans">โจทย์ข้อ 1: "ส้มหวานพอ ๆ กับมะม่วง"</span>
+                        <p class="text-xs text-slate-400 italic">คำใบ้: ส้ม = オレンジ (orenji), มะม่วง = マンゴー (mangoo), หวาน = 甘い (amai)</p>
+                        <input id="writing1" type="text" class="w-full p-3 bg-white border border-slate-300 rounded-xl font-semibold text-slate-800 focus:ring-2 focus:ring-red-400 outline-none" placeholder="พิมพ์ประโยคคำแปลของคุณที่นี่..." />
+                        
+                        <div class="flex gap-2">
+                            <button onclick="checkWriting(1, ['オレンジはマンゴーと同じぐらい甘いです。', 'orenji wa mangoo to onaji gurai amai desu'])" class="bg-red-500 hover:bg-red-600 text-white text-xs font-bold px-4 py-2 rounded-lg transition">ตรวจคำตอบ</button>
+                            <button onclick="toggleHint(1)" class="bg-slate-200 hover:bg-slate-300 text-slate-700 text-xs font-bold px-4 py-2 rounded-lg transition">แสดงคำตอบเฉลย</button>
+                        </div>
+                        <div id="writingFeedback-1" class="hidden text-xs font-bold p-3 rounded-lg"></div>
+                        <div id="hint-1" class="hidden p-3 bg-white border border-slate-200 rounded-lg text-xs space-y-1">
+                            <p class="font-bold text-red-600">คำตอบเฉลย:</p>
+                            <p class="jp-font text-sm">オレンジは マンゴーと同じぐらい 甘いです。</p>
+                            <p class="text-slate-500 font-mono">Orenji wa mangoo to onaji gurai amai desu.</p>
+                        </div>
+                    </div>
+
+                    <!-- Writing Task 2 -->
+                    <div class="p-5 rounded-2xl border border-slate-150 bg-slate-50 space-y-3">
+                        <span class="bg-amber-100 text-amber-800 text-xs px-2.5 py-1 rounded-full font-bold font-sans">โจทย์ข้อ 2: "เงาะไม่แพงเท่ามังคุด"</span>
+                        <p class="text-xs text-slate-400 italic">คำใบ้: เงาะ = ランブータン (ranbuutan), มังคุด = マンゴスチン (mangosuchin), แพง = 高い (takai)</p>
+                        <input id="writing2" type="text" class="w-full p-3 bg-white border border-slate-300 rounded-xl font-semibold text-slate-800 focus:ring-2 focus:ring-red-400 outline-none" placeholder="พิมพ์ประโยคคำแปลของคุณที่นี่..." />
+                        
+                        <div class="flex gap-2">
+                            <button onclick="checkWriting(2, ['ランブータンはマンゴスチンほど高くないです。', 'ranbuutan wa mangosuchin hodo takakunai desu'])" class="bg-red-500 hover:bg-red-600 text-white text-xs font-bold px-4 py-2 rounded-lg transition">ตรวจคำตอบ</button>
+                            <button onclick="toggleHint(2)" class="bg-slate-200 hover:bg-slate-300 text-slate-700 text-xs font-bold px-4 py-2 rounded-lg transition">แสดงคำตอบเฉลย</button>
+                        </div>
+                        <div id="writingFeedback-2" class="hidden text-xs font-bold p-3 rounded-lg"></div>
+                        <div id="hint-2" class="hidden p-3 bg-white border border-slate-200 rounded-lg text-xs space-y-1">
+                            <p class="font-bold text-red-600">คำตอบเฉลย:</p>
+                            <p class="jp-font text-sm">ランブータンは マンゴスチンほど 高くないです。</p>
+                            <p class="text-slate-500 font-mono">Ranbuutan wa mangosuchin hodo takakunai desu.</p>
+                        </div>
+                    </div>
+
+                    <!-- Writing Task 3 -->
+                    <div class="p-5 rounded-2xl border border-slate-150 bg-slate-50 space-y-3">
+                        <span class="bg-amber-100 text-amber-800 text-xs px-2.5 py-1 rounded-full font-bold font-sans">โจทย์ข้อ 3: "ในบรรดากีฬา อะไรสนุกที่สุด?"</span>
+                        <p class="text-xs text-slate-400 italic">คำใบ้: กีฬา = スポーツ (supootsu), สนุก/น่าสนใจ = おもしろい (omoshiroi)</p>
+                        <input id="writing3" type="text" class="w-full p-3 bg-white border border-slate-300 rounded-xl font-semibold text-slate-800 focus:ring-2 focus:ring-red-400 outline-none" placeholder="พิมพ์ประโยคคำแปลของคุณที่นี่..." />
+                        
+                        <div class="flex gap-2">
+                            <button onclick="checkWriting(3, ['スポーツの中で何がいちばんおもしろいです。', 'スポーツのなかで何がいちばんおもしろいですか。', 'supootsu no naka de nani ga ichiban omoshiroi desu ka'])" class="bg-red-500 hover:bg-red-600 text-white text-xs font-bold px-4 py-2 rounded-lg transition">ตรวจคำตอบ</button>
+                            <button onclick="toggleHint(3)" class="bg-slate-200 hover:bg-slate-300 text-slate-700 text-xs font-bold px-4 py-2 rounded-lg transition">แสดงคำตอบเฉลย</button>
+                        </div>
+                        <div id="writingFeedback-3" class="hidden text-xs font-bold p-3 rounded-lg"></div>
+                        <div id="hint-3" class="hidden p-3 bg-white border border-slate-200 rounded-lg text-xs space-y-1">
+                            <p class="font-bold text-red-600">คำตอบเฉลย:</p>
+                            <p class="jp-font text-sm">スポーツのの中で 何が いちばん おもしろいですか。</p>
+                            <p class="text-slate-500 font-mono">Supootsu no naka de nani ga ichiban omoshiroi desu ka?</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Type D: Interactive Sentence Builder (Word Puzzle) -->
+            <div class="bg-white rounded-3xl p-6 md:p-8 shadow-sm border border-slate-100">
+                <div class="flex items-center gap-3 mb-6 border-b border-slate-100 pb-4">
+                    <span class="text-2xl">🧩</span>
+                    <div>
+                        <h2 class="text-xl font-bold text-slate-800">แบบฝึกหัดที่ 4: เกมเรียงประโยค (Word Puzzle Unscramble)</h2>
+                        <p class="text-xs text-slate-500">คลิกที่คำศัพท์ด้านล่างเพื่อเรียงประโยคถามความชอบจากผลไม้ 3 ชนิด</p>
+                    </div>
+                </div>
+
+                <div class="bg-slate-50 rounded-2xl p-6 border border-slate-100 space-y-6">
+                    <p class="font-bold text-slate-700 text-sm">โจทย์: "ในบรรดาแอปเปิ้ล กล้วย และส้ม อันไหนชอบที่สุด?"</p>
+                    <div class="p-4 bg-white border border-slate-200 rounded-xl min-h-[60px] flex flex-wrap gap-2 items-center" id="puzzleDisplay">
+                        <span class="text-slate-400 text-sm">คลิกเลือกคำศัพท์ด้านล่างเพื่อเริ่มเรียงประโยค...</span>
+                    </div>
+
+                    <!-- Word Pool -->
+                    <div class="flex flex-wrap gap-2" id="wordPool">
+                        <button onclick="addWordToPuzzle('りんごと', this)" class="bg-slate-200 hover:bg-slate-300 font-semibold text-slate-800 px-4 py-2 rounded-xl transition text-sm">りんごと <span class="block text-[10px] text-slate-500 font-normal">ringo to</span></button>
+                        <button onclick="addWordToPuzzle('バナナと', this)" class="bg-slate-200 hover:bg-slate-300 font-semibold text-slate-800 px-4 py-2 rounded-xl transition text-sm">バナナと <span class="block text-[10px] text-slate-500 font-normal">banana to</span></button>
+                        <button onclick="addWordToPuzzle('オレンジの', this)" class="bg-slate-200 hover:bg-slate-300 font-semibold text-slate-800 px-4 py-2 rounded-xl transition text-sm">オレンジของ <span class="block text-[10px] text-slate-500 font-normal">orenji no</span></button>
+                        <button onclick="addWordToPuzzle('中で', this)" class="bg-slate-200 hover:bg-slate-300 font-semibold text-slate-800 px-4 py-2 rounded-xl transition text-sm">中で <span class="block text-[10px] text-slate-500 font-normal">naka de</span></button>
+                        <button onclick="addWordToPuzzle('どれが', this)" class="bg-slate-200 hover:bg-slate-300 font-semibold text-slate-800 px-4 py-2 rounded-xl transition text-sm">どれが <span class="block text-[10px] text-slate-500 font-normal">dore ga</span></button>
+                        <button onclick="addWordToPuzzle('いちばん', this)" class="bg-slate-200 hover:bg-slate-300 font-semibold text-slate-800 px-4 py-2 rounded-xl transition text-sm">いちばん <span class="block text-[10px] text-slate-500 font-normal">ichiban</span></button>
+                        <button onclick="addWordToPuzzle('好きですか。', this)" class="bg-slate-200 hover:bg-slate-300 font-semibold text-slate-800 px-4 py-2 rounded-xl transition text-sm">好きですか。 <span class="block text-[10px] text-slate-500 font-normal">suki desu ka?</span></button>
+                    </div>
+
+                    <!-- Action buttons -->
+                    <div class="flex gap-2">
+                        <button onclick="checkPuzzle()" class="bg-red-500 text-white font-bold px-6 py-2 rounded-xl hover:bg-red-600 transition text-sm">ตรวจประโยค</button>
+                        <button onclick="resetPuzzle()" class="bg-slate-300 text-slate-700 font-bold px-6 py-2 rounded-xl hover:bg-slate-400 transition text-sm">รีเซ็ต</button>
+                    </div>
+
+                    <div id="puzzleFeedback" class="hidden text-sm font-bold p-3 rounded-xl"></div>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <footer class="bg-slate-800 text-slate-400 py-10 px-4 text-center text-sm border-t border-slate-700">
+        <p class="jp-font text-slate-300 mb-2 text-base font-semibold">勉強してくれてありがとう！ (ขอบคุณสำหรับการเรียนรู้ร่วมกัน!)</p>
+        <p>© 2026 Nihongo Study Dashboard. Lesson 13 Interactive Tool (6-Tab Expanded Edition)</p>
+    </footer>
+
+    <!-- JavaScript to manage state, tabs, and interactive exercises -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const toggleBtn = document.getElementById('toggleRomaji');
+            const romajiCols = document.querySelectorAll('.romaji-col');
+            const romajiBtnText = document.getElementById('romajiBtnText');
+            let romajiVisible = true;
+
+            // Global Romaji visibility toggle
+            toggleBtn.addEventListener('click', () => {
+                romajiVisible = !romajiVisible;
+                romajiCols.forEach(col => {
+                    col.style.display = romajiVisible ? '' : 'none';
+                });
+                romajiBtnText.textContent = romajiVisible ? 'ซ่อนคำอ่านโรมาจิ' : 'แสดงคำอ่านโรมาจิ';
+            });
+        });
+
+        // Tab Switching Logic
+        function switchTab(tabId, btnElement) {
+            const contents = document.querySelectorAll('.tab-content');
+            contents.forEach(content => content.classList.remove('active'));
+
+            const activeContent = document.getElementById(tabId);
+            if (activeContent) {
+                activeContent.classList.add('active');
+            }
+
+            const buttons = document.querySelectorAll('.tab-btn');
+            buttons.forEach(btn => {
+                btn.className = "tab-btn w-full md:w-auto px-4 py-3 rounded-xl md:rounded-full font-bold text-xs text-slate-700 hover:bg-white/50 transition-all flex items-center justify-center gap-2";
+            });
+
+            btnElement.className = "tab-btn active w-full md:w-auto px-4 py-3 rounded-xl md:rounded-full font-bold text-xs text-red-600 bg-white shadow-sm transition-all flex items-center justify-center gap-2";
+        }
+
+        // Exercise 1: Multiple choice checking logic
+        const answers1 = {
+            1: 0, 
+            2: 1 
+        };
+
+        function checkAnswer(questionNum, selectedIndex, buttonElement) {
+            const feedbackEl = document.getElementById(`feedback-${questionNum}`);
+            const buttons = buttonElement.parentNode.querySelectorAll('button');
+            
+            buttons.forEach(btn => btn.disabled = true);
+            const isCorrect = selectedIndex === answers1[questionNum];
+
+            feedbackEl.classList.remove('hidden');
+            if (isCorrect) {
+                buttonElement.className = "w-full text-left p-3 rounded-lg bg-emerald-100 border-2 border-emerald-500 font-bold text-emerald-800 transition";
+                feedbackEl.className = "text-xs font-bold p-2.5 rounded-lg bg-emerald-50 text-emerald-700 block mt-2";
+                feedbackEl.innerHTML = "🎉 ถูกต้องเก่งมากค่ะ!";
+            } else {
+                buttonElement.className = "w-full text-left p-3 rounded-lg bg-red-100 border-2 border-red-500 font-bold text-red-800 transition";
+                feedbackEl.className = "text-xs font-bold p-2.5 rounded-lg bg-red-50 text-red-700 block mt-2";
+                feedbackEl.innerHTML = "❌ ยังไม่ถูกต้องน้า ลองใหม่อีกครั้งค่ะ!";
+                buttons[answers1[questionNum]].className = "w-full text-left p-3 rounded-lg bg-emerald-50 border border-emerald-400 font-semibold text-emerald-700 transition";
+            }
+        }
+
+        // Exercise 2: Fill in the Blanks verification
+        function checkAllBlanks() {
+            const b1 = document.getElementById('blank1').value.trim();
+            const b2 = document.getElementById('blank2').value.trim();
+            const b3 = document.getElementById('blank3').value.trim();
+            const b4 = document.getElementById('blank4').value.trim();
+            const b5 = document.getElementById('blank5').value.trim();
+            const b6 = document.getElementById('blank6').value.trim();
+            const b7 = document.getElementById('blank7').value.trim();
+
+            const feedback = document.getElementById('blanksFeedback');
+            feedback.classList.remove('hidden');
+
+            const isQ1Correct = (b1 === 'と' && b2 === 'と' && b3 === 'が');
+            const isQ2Correct = (b4 === 'の中で' || b4 === 'のなかで') && b5 === 'が';
+            const isQ3Correct = (b6 === 'ほど');
+            const isQ4Correct = (b7 === 'と同じぐらい' || b7 === 'とおなじぐらい');
+
+            if (isQ1Correct && isQ2Correct && isQ3Correct && isQ4Correct) {
+                feedback.className = "text-sm font-bold p-3 rounded-xl mt-3 bg-emerald-100 text-emerald-800";
+                feedback.textContent = "🎉 ยอดเยี่ยมมาก! เติมคำช่วยและโครงสร้างได้ถูกต้องครบทุกคำตอบเลยค่ะ!";
+            } else {
+                feedback.className = "text-sm font-bold p-3 rounded-xl mt-3 bg-red-100 text-red-800";
+                feedback.innerHTML = `⚠️ บางช่องยังไม่ถูกต้อง ลองตรวจสอบคำตอบของคุณอีกครั้ง:<br>
+                <ul class='list-disc list-inside mt-2 font-normal text-xs space-y-1'>
+                    <li>ข้อ 1: ระหว่าง 2 สิ่ง -> <strong>と... と... が</strong></li>
+                    <li>ข้อ 2: หาที่สุด 3 สิ่ง -> <strong>の中で... が</strong></li>
+                    <li>ข้อ 3: ขั้นไม่เท่ากัน -> <strong>ほど</strong></li>
+                    <li>ข้อ 4: ขั้นเท่ากัน -> <strong>と同じぐらい</strong></li>
+                </ul>`;
+            }
+        }
+
+        // Exercise 3: Translation Writing Practice checking logic
+        function checkWriting(index, correctAnswers) {
+            const inputVal = document.getElementById(`writing${index}`).value.trim().toLowerCase().replace(/\s+/g, '');
+            const feedback = document.getElementById(`writingFeedback-${index}`);
+            feedback.classList.remove('hidden');
+
+            // Check if user's input matches any correct answer variants
+            let isMatched = false;
+            correctAnswers.forEach(ans => {
+                const cleanedAns = ans.toLowerCase().replace(/\s+/g, '');
+                if (inputVal === cleanedAns || inputVal.includes(cleanedAns) || cleanedAns.includes(inputVal) && inputVal.length > 5) {
+                    isMatched = true;
+                }
+            });
+
+            if (isMatched) {
+                feedback.className = "text-xs font-bold p-3 rounded-lg bg-emerald-100 text-emerald-800 mt-2";
+                feedback.innerHTML = "🎉 เก่งมาก! ประโยคเขียนของคุณมีความถูกต้องและสอดคล้องกับโครงสร้างหลักไวยากรณ์ครับ";
+            } else {
+                feedback.className = "text-xs font-bold p-3 rounded-lg bg-amber-100 text-amber-800 mt-2";
+                feedback.innerHTML = "💡 ลองตรวจสอบการเขียนหรือเทียบเคียงกับเฉลยโดยการกดปุ่ม 'แสดงคำตอบเฉลย' ดูนะคะ!";
+            }
+        }
+
+        // Hint Toggle
+        function toggleHint(index) {
+            const hintBox = document.getElementById(`hint-${index}`);
+            hintBox.classList.toggle('hidden');
+        }
+
+        // Exercise 4: Word puzzle unscramble logic
+        let currentPuzzleWords = [];
+        const correctPuzzleOrder = ["りんごと", "バナナと", "オレンジの", "中で", "どれが", "いちばん", "好きですか。"];
+
+        function addWordToPuzzle(word, buttonElement) {
+            const displayEl = document.getElementById('puzzleDisplay');
+            
+            if (currentPuzzleWords.length === 0) {
+                displayEl.innerHTML = "";
+            }
+
+            if (currentPuzzleWords.includes(word)) return;
+
+            currentPuzzleWords.push(word);
+            
+            const chip = document.createElement('span');
+            chip.className = "bg-red-500 text-white font-bold px-3 py-1.5 rounded-lg text-xs flex items-center gap-1 cursor-pointer hover:bg-red-600 transition";
+            chip.textContent = word;
+            chip.onclick = () => removeWordFromPuzzle(word, chip);
+            displayEl.appendChild(chip);
+
+            buttonElement.className = "bg-slate-300 text-slate-400 font-semibold px-4 py-2 rounded-xl transition text-xs cursor-not-allowed";
+            buttonElement.disabled = true;
+        }
+
+        function removeWordFromPuzzle(word, chipElement) {
+            currentPuzzleWords = currentPuzzleWords.filter(w => w !== word);
+            chipElement.remove();
+
+            const buttons = document.querySelectorAll('#wordPool button');
+            buttons.forEach(btn => {
+                if (btn.textContent.includes(word)) {
+                    btn.className = "bg-slate-200 hover:bg-slate-300 font-semibold text-slate-800 px-4 py-2 rounded-xl transition text-xs";
+                    btn.disabled = false;
+                }
+            });
+
+            if (currentPuzzleWords.length === 0) {
+                document.getElementById('puzzleDisplay').innerHTML = '<span class="text-slate-400 text-sm">คลิกเลือกคำศัพท์ด้านล่างเพื่อเริ่มเรียงประโยค...</span>';
+            }
+        }
+
+        function resetPuzzle() {
+            currentPuzzleWords = [];
+            document.getElementById('puzzleDisplay').innerHTML = '<span class="text-slate-400 text-sm">คลิกเลือกคำศัพท์ด้านล่างเพื่อเริ่มเรียงประโยค...</span>';
+            
+            const feedback = document.getElementById('puzzleFeedback');
+            feedback.classList.add('hidden');
+
+            const buttons = document.querySelectorAll('#wordPool button');
+            buttons.forEach(btn => {
+                const isRingo = btn.textContent.includes('りんごと');
+                const isBanana = btn.textContent.includes('バナナと');
+                const isOrenji = btn.textContent.includes('オレンジ');
+                const isNaka = btn.textContent.includes('中で');
+                const isDore = btn.textContent.includes('どれが');
+                const isIchiban = btn.textContent.includes('いちばん');
+                const isSuki = btn.textContent.includes('好きですか。');
+
+                let label = '';
+                if(isRingo) label = 'りんごと <span class="block text-[10px] text-slate-500 font-normal">ringo to</span>';
+                else if(isBanana) label = 'バナナと <span class="block text-[10px] text-slate-500 font-normal">banana to</span>';
+                else if(isOrenji) label = 'オレンジの <span class="block text-[10px] text-slate-500 font-normal">orenji no</span>';
+                else if(isNaka) label = '中で <span class="block text-[10px] text-slate-500 font-normal">naka de</span>';
+                else if(isDore) label = 'どれが <span class="block text-[10px] text-slate-500 font-normal">dore ga</span>';
+                else if(isIchiban) label = 'いちばん <span class="block text-[10px] text-slate-500 font-normal">ichiban</span>';
+                else if(isSuki) label = '好きですか。 <span class="block text-[10px] text-slate-500 font-normal">suki desu ka?</span>';
+
+                btn.innerHTML = label;
+                btn.className = "bg-slate-200 hover:bg-slate-300 font-semibold text-slate-800 px-4 py-2 rounded-xl transition text-xs";
+                btn.disabled = false;
+            });
+        }
+
+        function checkPuzzle() {
+            const feedback = document.getElementById('puzzleFeedback');
+            feedback.classList.remove('hidden');
+
+            if (currentPuzzleWords.length !== correctPuzzleOrder.length) {
+                feedback.className = "text-xs font-bold p-3 rounded-xl bg-amber-100 text-amber-800 mt-3";
+                feedback.textContent = "⚠️ จำนวนคำศัพท์ยังไม่ครบประโยคเลย ลองเลือกคำให้ครบสิคะ";
+                return;
+            }
+
+            let isCorrect = true;
+            for (let i = 0; i < correctPuzzleOrder.length; i++) {
+                if (currentPuzzleWords[i] !== correctPuzzleOrder[i]) {
+                    isCorrect = false;
+                    break;
+                }
+            }
+
+            if (isCorrect) {
+                feedback.className = "text-xs font-bold p-3 rounded-xl bg-emerald-100 text-emerald-800 mt-3";
+                feedback.textContent = "🎉 ยอดเยี่ยม! คุณเรียงประโยคเปรียบเทียบที่สุดระหว่างผลไม้ 3 สิ่งได้สมบูรณ์และถูกต้องตามโครงสร้างภาษาญี่ปุ่นค่ะ!";
+            } else {
+                feedback.className = "text-xs font-bold p-3 rounded-xl bg-red-100 text-red-800 mt-3";
+                feedback.textContent = "❌ ลำดับยังไม่ถูกต้องตามหลักไวยากรณ์ญี่ปุ่น ลองสลับสับเปลี่ยนตำแหน่งคำช่วยอีกครั้งนะคะ!";
+            }
+        }
+    </script>
+</body>
+</html>
